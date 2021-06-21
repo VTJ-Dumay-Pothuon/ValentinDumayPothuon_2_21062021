@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    padding: 0 2%;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    clear: both;
+    font-size: 1.24em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input {
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.roundblock {
+    display: flex;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+}
+
+.fa-map-marker-alt {
+    padding: 10px 20px;
+}
+
+
+#head {
+    display: inline;
+}
+
+#logo {
+    width: 10%;
+    float: left;
+    padding: 20px 10px;
+}
+
+#subscribe {
+    color: #0065FC;
+    font-weight: bold;
+    float: right;
+    padding: 30px;
+}
+
+#menu {
+    display: inline-flex;
+    float: right;
+}
+
+#housing, #activities {
+    display: block;
+    padding: 30px;
+}
+
+#housing {
+    color: #0065FC;
+    border-top: 2px #0065FC ridge;
+}
+
+#srch_web, #srch_mob {
+    background-color: #0065FC;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+/* Mobile responsive settings */
+#srch_web {
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 0;
+    display: inline-block;
+}
+
+#srch_mob {
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+@media all and (orientation: portrait) {
+
+    #srch_web {
+        display: none;
+    }
+    
+    #srch_mob {
+        display: inline-block;
+    }
+}
