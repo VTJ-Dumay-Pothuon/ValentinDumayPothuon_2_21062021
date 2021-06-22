@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+/*overall style elements*/
 body {
     padding: 0 2%;
     font-family: 'Raleway', sans-serif;
 }
 
 h1 {
-    clear: both;
     font-size: 1.24em;
+}
+
+p {
+    margin: 5px 0;
 }
 
 a {
@@ -21,18 +25,83 @@ input {
     font-weight: bold;
 }
 
+/*Style-wide class elements*/
+.label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+}
 
 .roundblock {
     display: flex;
     background-color: #F2F2F2;
     border-radius: 10px;
+    width: max-content;
 }
 
 .fa-map-marker-alt {
     padding: 10px 20px;
 }
 
+.filterbutton {
+    border: solid 2px #D9D9D9;
+    border-radius: 20px;
+    padding-right: 10px;
+    margin: 10px;
+}
 
+.filterbutton .label {
+    font-size: 1em;
+}
+
+.down {
+    margin-top: 20px;
+}
+
+.fa-star {
+    color: #0065FC;
+}
+
+.popular-indv, .housing-indv, .activities-indv {
+    margin: 10px 15px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 5px 5px #D9D9D9;
+}
+
+.popular-indv::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.popular-indv img {
+    float: left;
+    width: 125px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.pop-txt p {
+    padding-left: 40%;
+    padding-right: 10%;
+}
+
+.housing-indv img {
+    width: 250px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+
+/*Unique block id elements*/
 #head {
     display: inline;
 }
@@ -55,12 +124,12 @@ input {
     float: right;
 }
 
-#housing, #activities {
+#housing-menu, #activities-menu {
     display: block;
     padding: 30px;
 }
 
-#housing {
+#housing-menu {
     color: #0065FC;
     border-top: 2px #0065FC ridge;
 }
@@ -74,8 +143,91 @@ input {
     color: white;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+#filters .fas {
+    color: #0065FC;
+    background-color: #DEEBFF;
+    width: 35px;
+    padding-block: 10px;
+    border-radius: 50%;
+    text-align: center;
+    margin: -2px;
+    margin-right: 3px;
+}
+
+#infolabel {
+    margin: 30px 10px;
+}
+
+#infolabel .fa-info {
+    color: #0065FC;
+    background-color: white;
+    border: 2px solid #D9D9D9;
+    width: 24px;
+    padding-block: 4px;
+    border-radius: 50%;
+    text-align: center;
+    margin: -2px;
+    margin-right: 3px;
+}
+
+#popular-block, #housing-block, #activities-block {
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#popular-block {
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 40%;
+    margin-right: 20px;
+}
+
+#popular-display {
+    width: 100%;
+}
+
+#pop-title {
+    width: 100%;
+}
+
+#pop-title-icon {
+    float: right;
+}
+
+#housing-block {
+    max-width: 60%;
+}
+
+#housing-display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* standard web version of the pictures */
+#hd-1 img {content: url("images/hebergements/web/marcus-loke-WQJvWU_HZFo-unsplash.jpg");}
+#hd-2 img {content: url("images/hebergements/web/fred-kleber-gTbaxaVLvsg-unsplash.jpg");}
+#hd-3 img {content: url("images/hebergements/web/reisetopia-B8WIgxA_PFU-unsplash.jpg");}
+#hd-4 img {content: url("images/hebergements/web/annie-spratt-Eg1qcIitAuA-unsplash.jpg");}
+#hd-5 img {content: url("images/hebergements/web/nicate-lee-kT-ZyaiwBe0-unsplash.jpg");}
+#hd-6 img {content: url("images/hebergements/web/febrian-zakaria-M6S1WvfW68A-unsplash.jpg");}
+#pop-1 img {content: url("images/hebergements/web/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg");}
+#pop-2 img {content: url("images/hebergements/web/aw-creative-VGs8z60yT2c-unsplash.jpg");}
+#pop-3 img {content: url("images/hebergements/web/febrian-zakaria-sjvU0THccQA-unsplash.jpg");}
+
+/* UNchecked stars ; to be replaced with a script */
+#hd-1-star-5, #hd-3-star-5, #hd-4-star-4, #hd-4-star-5, #hd-5-star-5 {
+    color: #D9D9D9;
+}
 
 
 /* Mobile responsive settings */
@@ -92,6 +244,28 @@ input {
 }
 
 @media all and (orientation: portrait) {
+    
+    .filterbutton {
+        margin: 6px;
+    }
+
+    .popular-indv, .housing-indv, .activities-indv {
+        margin: 0;
+        padding: 0;
+        font-size: 75%;
+    }
+    
+    .popular-indv img {
+        float: left;
+        width: 90px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 15px 0 0 15px;
+    }
+    
+    #filters .down {
+        margin-right: 100%;
+    }
 
     #srch_web {
         display: none;
@@ -100,4 +274,25 @@ input {
     #srch_mob {
         display: inline-block;
     }
+
+    #housing-block {
+        max-width: 100%;
+    }
+
+    #popular-block {
+        float: none;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    /* smaller mobile version of the pictures */
+    #hd-1 img {content: url("images/hebergements/mobile/marcus-loke-WQJvWU_HZFo-unsplash.jpg");}
+    #hd-2 img {content: url("images/hebergements/mobile/fred-kleber-gTbaxaVLvsg-unsplash.jpg");}
+    #hd-3 img {content: url("images/hebergements/mobile/reisetopia-B8WIgxA_PFU-unsplash.jpg");}
+    #hd-4 img {content: url("images/hebergements/mobile/annie-spratt-Eg1qcIitAuA-unsplash.jpg");}
+    #hd-5 img {content: url("images/hebergements/mobile/nicate-lee-kT-ZyaiwBe0-unsplash.jpg");}
+    #hd-6 img {content: url("images/hebergements/mobile/febrian-zakaria-M6S1WvfW68A-unsplash.jpg");}
+    #pop-1 img {content: url("images/hebergements/mobile/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg");}
+    #pop-2 img {content: url("images/hebergements/mobile/aw-creative-VGs8z60yT2c-unsplash.jpg");}
+    #pop-3 img {content: url("images/hebergements/mobile/febrian-zakaria-sjvU0THccQA-unsplash.jpg");}    
 }
