@@ -28,11 +28,13 @@ input {
     font-weight: bold;
 }
 
-header, footer {
+header,
+footer {
     display: inline;
 }
 
 footer {
+    background-color: #F2F2F2;
     display: flex;
     width: 100%;
     padding-left: 50px;
@@ -81,7 +83,7 @@ footer section {
     color: #0065FC;
     background-color: #DEEBFF;
     width: 35px;
-    padding-block: 10px;
+    padding: 10px 0;
     border-radius: 50%;
     text-align: center;
     margin: -2px;
@@ -144,14 +146,16 @@ footer section {
 
 .housing-indv img {
     width: 230px;
-    max-width: 230px; /*Edge compatibility*/
+    max-width: 230px;
+    /*Edge compatibility*/
     height: 115px;
-    max-height: 115px; /*Edge compatibility*/
+    max-height: 115px;
+    /*Edge compatibility*/
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
 
-.housing-indv h2, 
+.housing-indv h2,
 .housing-indv p {
     margin: 5px 0;
 }
@@ -168,9 +172,11 @@ footer section {
 
 .activities-indv img {
     width: 100%;
-    max-width: 100%; /*Edge compatibility*/
+    max-width: 100%;
+    /*Edge compatibility*/
     height: 76%;
-    max-height: 76%; /*Edge compatibility*/
+    max-height: 76%;
+    /*Edge compatibility*/
     object-fit: cover;
     object-position: top;
     border-radius: 15px 15px 0 0;
@@ -202,7 +208,7 @@ footer section {
 }
 
 #housing-menu:hover,
-#activities-menu:hover  {
+#activities-menu:hover {
     color: #0065FC;
     border-top: 2px #0065FC ridge;
     padding-top: 28px;
@@ -236,7 +242,7 @@ footer section {
     background-color: white;
     border: 2px solid #D9D9D9;
     width: 24px;
-    padding-block: 4px;
+    padding: 4px 0;
     border-radius: 50%;
     text-align: center;
     margin: -2px;
@@ -292,11 +298,12 @@ footer section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 250px;
-    grid-template-areas: 
-    "act-1 act-2 act-4 act-5"
-    "act-1 act-3 act-4 act-6"; 
+    grid-template-areas:
+        "act-1 act-2 act-4 act-5"
+        "act-1 act-3 act-4 act-6";
     grid-gap: 20px;
 }
+
 
 #act-1 {grid-area: act-1;}
 #act-2 {grid-area: act-2;}
@@ -306,9 +313,11 @@ footer section {
 #act-6 {grid-area: act-6;}
 
 
-#act-1 img, #act-4 img {
+#act-1 img,
+#act-4 img {
     height: 90%;
-    min-height: 90%; /*Edge compatibility*/
+    min-height: 90%;
+    /*Edge compatibility*/
 }
 
 
@@ -322,13 +331,15 @@ footer section {
 #hous-4-star-4,
 #hous-4-star-5,
 #hous-5-star-5,
- #pop-2-star-5,
- #pop-3-star-5 {
+#pop-2-star-5,
+#pop-3-star-5 {
     color: #D9D9D9;
 }
 
 
-/* Mobile responsive settings */
+/* Mobile responsive settings, ordered by ratio */
+
+/* Research screen-width specific button*/
 #srch_web {
     padding: 10px 20px;
     border-radius: 0 10px 10px 0;
@@ -341,7 +352,18 @@ footer section {
     display: none;
 }
 
-@media (orientation: portrait) {
+@media (max-aspect-ratio: 9/10) {
+    #srch_web {
+        display: none;
+    }
+
+    #srch_mob {
+        display: inline-block;
+    }
+}
+
+/* General settings ; 13/10 covers almost-square tablets*/
+@media (max-aspect-ratio: 13/10) {
 
     footer {
         display: block;
@@ -349,7 +371,7 @@ footer section {
         padding-bottom: 40px;
         background-color: #F2F2F2;
     }
-    
+
     footer section {
         width: 100%;
         font-size: 90%;
@@ -380,7 +402,7 @@ footer section {
     .popular-indv,
     .housing-indv,
     .activities-indv {
-        margin: 0;
+        margin: 5px;
         padding: 0;
         font-size: 70%;
     }
@@ -408,15 +430,17 @@ footer section {
     }
 
 
-    .activities-indv h2
-    .activities-indv p {
+    .activities-indv h2 .activities-indv p {
         padding-left: 10px;
         margin-top: 10px;
     }
 
-    .activities-indv img, #act-1 img, #act-4 img {
+    .activities-indv img,
+    #act-1 img,
+    #act-4 img {
         height: 125px;
-        min-height: 0%; /*Edge compatibility disable*/
+        min-height: 0%;
+        /*Edge compatibility disable*/
         object-position: center;
     }
 
@@ -444,14 +468,6 @@ footer section {
         margin-right: 100%;
     }
 
-    #srch_web {
-        display: none;
-    }
-
-    #srch_mob {
-        display: inline-block;
-    }
-
     #housing-block {
         max-width: 100%;
     }
@@ -473,5 +489,27 @@ footer section {
     #activities-display {
         display: flex;
         flex-wrap: wrap;
+    }
+}
+
+/* Activities grid specific settings to prevent overflow for any ratio */
+@media (min-aspect-ratio: 13/10) and (max-aspect-ratio: 9/5) {
+    .activities-indv h2 {
+        font-size: 1.1em;
+    }
+
+    #activities-display {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "act-1 act-2 act-4""act-1 act-3 act-4""act-5 act-5 act-6";
+    }
+}
+
+@media (min-aspect-ratio: 13/10) and (max-aspect-ratio: 53/25) {
+    .activities-indv h2 {
+        font-size: 1em;
+    }
+
+    #activities-display {
+        grid-gap: 10px;
     }
 }
