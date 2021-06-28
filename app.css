@@ -2,7 +2,7 @@
 
 /*overall style elements*/
 body {
-    padding: 0 2%;
+    margin: auto 0;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -12,9 +12,9 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 1.18em;
     font-weight: bold;
-    margin: 20px 0 0 0;
+    margin-top: 20px;
 }
 
 a {
@@ -36,7 +36,6 @@ footer {
 footer {
     background-color: #F2F2F2;
     display: flex;
-    width: 100%;
     padding-left: 50px;
 }
 
@@ -113,7 +112,7 @@ footer section {
 .housing-indv,
 .activities-indv {
     margin: 10px 15px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 5px 5px #D9D9D9;
@@ -127,7 +126,7 @@ footer section {
 }
 
 .popular-indv p {
-    margin-bottom: 5px;
+    margin-bottom: 0;
 }
 
 .popular-indv img {
@@ -138,19 +137,21 @@ footer section {
     border-radius: 15px 0 0 15px;
 }
 
+.pop-txt h2 {
+    padding-top: 1%;
+    margin-top: 0;
+}
+
 .pop-txt h2,
 .pop-txt p {
-    padding-left: 40%;
-    padding-right: 10%;
+    padding-left: 43%;
 }
 
 .housing-indv img {
-    width: 230px;
-    max-width: 230px;
-    /*Edge compatibility*/
+    width: 240px;
+    max-width: 240px;    /*Edge compatibility*/
     height: 115px;
-    max-height: 115px;
-    /*Edge compatibility*/
+    max-height: 115px;    /*Edge compatibility*/
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
@@ -172,11 +173,9 @@ footer section {
 
 .activities-indv img {
     width: 100%;
-    max-width: 100%;
-    /*Edge compatibility*/
+    max-width: 100%;    /*Edge compatibility*/
     height: 76%;
-    max-height: 76%;
-    /*Edge compatibility*/
+    max-height: 76%;    /*Edge compatibility*/
     object-fit: cover;
     object-position: top;
     border-radius: 15px 15px 0 0;
@@ -196,6 +195,12 @@ footer section {
     padding: 30px;
 }
 
+#logo,
+#navsearch,
+#housing-block {
+    margin-left: 30px;
+}
+
 #menu {
     display: inline-flex;
     float: right;
@@ -210,8 +215,8 @@ footer section {
 #housing-menu:hover,
 #activities-menu:hover {
     color: #0065FC;
-    border-top: 2px #0065FC ridge;
-    padding-top: 28px;
+    border-top: solid 2px #0065FC;
+    padding-top: 29px;
     border-bottom: none;
 }
 
@@ -230,11 +235,11 @@ footer section {
 #filters {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 10px 30px;
 }
 
 #infolabel {
-    margin: 30px 10px;
+    margin: 30px;
 }
 
 #infolabel .fa-info {
@@ -260,8 +265,7 @@ footer section {
     float: right;
     display: flex;
     flex-wrap: wrap;
-    min-width: 25%;
-    max-width: 40%;
+    width: 25%;
     margin-right: 20px;
 }
 
@@ -272,7 +276,7 @@ footer section {
 #pop-title {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 94%;
 }
 
 #housing-block {
@@ -316,8 +320,7 @@ footer section {
 #act-1 img,
 #act-4 img {
     height: 90%;
-    min-height: 90%;
-    /*Edge compatibility*/
+    min-height: 90%;    /*Edge compatibility*/
 }
 
 
@@ -336,6 +339,92 @@ footer section {
     color: #D9D9D9;
 }
 
+/*Narrow web browser responsive flex*/
+@media (max-width: 1420px) {
+    #popular-block {
+        padding: 15px;
+    }
+
+    #housing-block {
+        max-width: 65%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1310px) {
+    .housing-indv {
+        margin: 10px;
+    }
+
+    .housing-indv img {
+        width: 230px;
+        max-width: 230px;    /*Edge compatibility*/
+    }
+
+    .popular-indv {
+        margin: 10px 0;
+    }
+
+    .popular-indv h2 {
+        font-size: 1.15em;
+    }
+
+    #hous-1 h2 {
+        font-size: 1.15em;
+    }
+
+    #popular-block {
+        padding: 10px;
+    }
+}
+@media (max-width: 1220px) {
+    .housing-indv {
+        margin: 5px;
+    }
+    
+    .housing-indv img {
+        width: 250px;
+        max-width: 250px;    /*Edge compatibility*/
+    }
+    
+    #popular-block {
+        width: 35%;
+        padding: 15px;
+    }
+
+    #housing-block {
+        max-width: 52%;
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 1075px) {
+    .housing-indv {
+        margin: 5px 0 5px 30px;
+    }
+    
+    .housing-indv img {
+        width: 250px;
+        max-width: 250px;    /*Edge compatibility*/
+    }
+    
+    #hous-1 h2 {
+        font-size: 1em;
+    }
+    
+    #popular-block {
+        width: 45%;
+    }
+
+    #housing-block {
+        max-width: 42%;
+        padding-left: 10px;
+    }
+
+    #housing-block h1 {
+        margin-top: 3px;
+    }
+}
 
 /* Mobile responsive settings, ordered by ratio */
 
@@ -352,7 +441,7 @@ footer section {
     display: none;
 }
 
-@media (max-aspect-ratio: 9/10) {
+@media (min-width: 320px) and (max-width: 450px) {
     #srch_web {
         display: none;
     }
@@ -362,31 +451,41 @@ footer section {
     }
 }
 
-/* General settings ; 13/10 covers almost-square tablets*/
-@media (max-aspect-ratio: 13/10) {
+/*ultra-narrow screen (smartwatch ?)*/
+@media (max-width: 320px) {
+    .roundblock {
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: inherit;
+    }
+    
+    #srch_web {
+        border-radius: 10px;
+        margin-left: 30px;
+    }
+}
+
+
+/* General settings ; 6/5 covers almost-square tablets, and all portrait displays*/
+@media (max-aspect-ratio: 6/5) {
 
     footer {
         display: block;
         padding-left: 20px;
         padding-bottom: 40px;
+        margin-top: 40px;
         background-color: #F2F2F2;
     }
 
     footer section {
         width: 100%;
+        padding-top: 5px;
         font-size: 90%;
     }
 
-    #housing-block h1 {
-        font-size: 1.2em;
-    }
-
     .fa-map-marker-alt {
-        padding: 10px;
-    }
-
-    .filterbutton {
-        margin: 6px;
+        padding: 10px 14px;
+        margin-left: 4px;
     }
 
     .filterbutton:active {
@@ -402,17 +501,27 @@ footer section {
     .popular-indv,
     .housing-indv,
     .activities-indv {
-        margin: 5px;
+        width: 100%;
+        margin: 5px 0;
         padding: 0;
-        font-size: 70%;
+        font-size: 90%;
     }
 
     .popular-indv img {
         float: left;
-        width: 90px;
-        height: 100px;
+        width: 38%;
+        height: 140px;
         object-fit: cover;
         border-radius: 15px 0 0 15px;
+    }
+
+    .pop-txt h2 {
+        padding-top: 20px;
+    }
+
+    .pop-txt h2,
+    .pop-txt p {
+        padding-left: 40%;
     }
 
     .housing-indv h2,
@@ -421,7 +530,9 @@ footer section {
     }
 
     .housing-indv img {
-        height: 85px;
+        height: 125px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .activities-indv {
@@ -439,19 +550,23 @@ footer section {
     #act-1 img,
     #act-4 img {
         height: 125px;
-        min-height: 0%;
-        /*Edge compatibility disable*/
+        min-height: 0%;        /*Edge compatibility disabling*/
         object-position: center;
     }
 
     #menu {
+        width: 100%;
         float: none;
+
     }
 
     #housing-menu,
     #activities-menu {
+        width: 50%;
         padding-bottom: 10px;
         margin-bottom: 20px;
+        text-align: center;
+
     }
 
     #housing-menu:hover,
@@ -462,7 +577,7 @@ footer section {
         border-bottom: 2px #0065FC ridge;
         padding-top: 30px;
         margin-bottom: 18px;
-    }
+    }    
 
     #filters .down {
         margin-right: 100%;
@@ -470,6 +585,13 @@ footer section {
 
     #housing-block {
         max-width: 100%;
+        padding: 20px;
+        background-color: inherit;
+        margin-left: 0;
+    }
+
+    #housing-block h1 {
+        font-size: 1.2em;
     }
 
     #housing-more {
@@ -478,12 +600,17 @@ footer section {
 
     #popular-block {
         float: none;
-        max-width: 100%;
+        width: 100%;
         margin-right: 0;
+        border-radius: 0;
+    }
+
+    #popular-display {
+        width: 92%;
     }
 
     #activities-block {
-        padding: 0;
+        padding: 0 20px;
     }
 
     #activities-display {
@@ -493,7 +620,7 @@ footer section {
 }
 
 /* Activities grid specific settings to prevent overflow for any ratio */
-@media (min-aspect-ratio: 13/10) and (max-aspect-ratio: 9/5) {
+@media (min-aspect-ratio: 7/5) and (max-aspect-ratio: 9/5) {
     .activities-indv h2 {
         font-size: 1.1em;
     }
@@ -504,7 +631,23 @@ footer section {
     }
 }
 
-@media (min-aspect-ratio: 13/10) and (max-aspect-ratio: 53/25) {
+@media (min-aspect-ratio: 6/5) and (max-aspect-ratio: 7/5) {
+    .activities-indv h2 {
+        font-size: 1.1em;
+    }
+
+    #housing-block {
+        min-width: 100%;
+        margin: 0 15px;
+    }
+
+    #activities-display {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "act-1 act-2""act-1 act-3""act-4 act-5""act-4 act-6";
+    }
+}
+
+@media (min-aspect-ratio: 6/5) and (max-aspect-ratio: 53/25) {
     .activities-indv h2 {
         font-size: 1em;
     }
