@@ -261,6 +261,11 @@ footer section {
     padding: 30px 0;
 }
 
+#popular-block,
+#housing-block h1 {
+    padding-left: 30px;
+}
+
 #popular-block {
     float: right;
     display: flex;
@@ -281,10 +286,6 @@ footer section {
 
 #housing-block {
     max-width: 60%;
-}
-
-#housing-block h1 {
-    padding-right: 30px;
 }
 
 #housing-display {
@@ -326,6 +327,10 @@ footer section {
 #act-4 img {
     height: 90%;
     min-height: 90%;    /*Edge compatibility*/
+}
+
+#act-1 {
+    padding-left: 0;
 }
 
 
@@ -403,9 +408,6 @@ footer section {
 }
 
 @media (max-width: 1075px) {
-    .housing-indv {
-        margin: 5px 0 5px 30px;
-    }
     
     .housing-indv img {
         width: 250px;
@@ -430,49 +432,48 @@ footer section {
     }
 }
 
-/* Mobile responsive settings, ordered by ratio */
+/* Mobile responsive settings, descending order for width */
 
-/* Research screen-width specific button*/
-#srch_web {
-    padding: 10px 20px;
-    border-radius: 0 10px 10px 0;
-    display: inline-block;
-}
-
-#srch_mob {
-    padding: 10px;
-    border-radius: 10px;
-    display: none;
-}
-
-@media (min-width: 320px) and (max-width: 450px) {
-    #srch_web {
-        display: none;
+/* Activities grid specific settings to prevent overflow for any ratio */
+@media (min-width: 800px) and (max-width: 1000px) {
+    .activities-indv h2 {
+        font-size: 1.1em;
     }
 
-    #srch_mob {
-        display: inline-block;
+    #activities-display {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "act-1 act-2 act-4""act-1 act-3 act-4""act-5 act-5 act-6";
     }
 }
 
-/*ultra-narrow screen (smartwatch ?)*/
-@media (max-width: 320px) {
-    .roundblock {
-        flex-wrap: wrap;
-        width: 100%;
-        background-color: inherit;
+@media (min-width: 550px) and (max-width: 1000px) {
+    .activities-indv h2 {
+        font-size: 1em;
     }
-    
-    #srch_web {
-        border-radius: 10px;
-        margin-left: 30px;
+
+    #activities-display {
+        grid-gap: 10px;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 800px) {
+    .activities-indv h2 {
+        font-size: 1.1em;
+    }
+
+    #housing-block {
+        margin: 0 15px;
+    }
+
+    #activities-display {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "act-1 act-2""act-1 act-3""act-4 act-5""act-4 act-6";
     }
 }
 
 
-/* General settings ; 6/5 covers almost-square tablets, and all portrait displays*/
-@media (max-aspect-ratio: 6/5) {
-
+/* portrait tablet and vertical split screen */
+@media (max-width: 650px) {
     footer {
         display: block;
         padding-left: 20px;
@@ -486,6 +487,71 @@ footer section {
         padding-top: 5px;
         font-size: 90%;
     }
+
+    .popular-indv {
+        width: 100%;
+        margin: 5px 0;
+        padding: 0;
+        font-size: 90%;
+    }
+
+    .popular-indv a {
+        display: table;
+    }
+
+    .popular-indv h2 {
+        font-size: 1.4em;
+    }
+
+    .popular-indv img {
+        float: none;
+        width: 250px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 15px 0 0 15px;
+    }
+
+    .pop-txt {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 5px;
+        width: 50%;
+    }
+
+    .pop-txt h2,
+    .pop-txt p {
+        padding-left: 0;
+    }
+
+    #popular-block {
+        float: none;
+        width: auto;
+        margin-right: 0;
+        border-radius: 0;
+    }
+
+    #popular-display {
+        width: 95%;
+        padding-left: 2%;
+    }
+
+    #housing-block {
+        max-width: 100%;
+        padding: 20px;
+        background-color: inherit;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 615px) {
+    .housing-indv img {
+        width: 230px;
+        max-width: 230px;    /*Edge compatibility*/
+    }
+}
+
+/* portrait mobile*/
+@media (max-width: 570px) {
 
     .fa-map-marker-alt {
         padding: 10px 14px;
@@ -502,30 +568,12 @@ footer section {
         color: #DEEBFF;
     }
 
-    .popular-indv,
     .housing-indv,
     .activities-indv {
         width: 100%;
         margin: 5px 0;
         padding: 0;
         font-size: 90%;
-    }
-
-    .popular-indv img {
-        float: left;
-        width: 38%;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 15px 0 0 15px;
-    }
-
-    .pop-txt h2 {
-        padding-top: 20px;
-    }
-
-    .pop-txt h2,
-    .pop-txt p {
-        padding-left: 40%;
     }
 
     .housing-indv h2,
@@ -543,7 +591,6 @@ footer section {
         width: 100%;
         padding: 10px;
     }
-
 
     .activities-indv h2 .activities-indv p {
         padding-left: 10px;
@@ -587,30 +634,12 @@ footer section {
         margin-right: 100%;
     }
 
-    #housing-block {
-        max-width: 100%;
-        padding: 20px;
-        background-color: inherit;
-        margin-left: 0;
-    }
-
     #housing-block h1 {
         font-size: 1.2em;
     }
 
     #housing-more {
         font-size: 1em;
-    }
-
-    #popular-block {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        border-radius: 0;
-    }
-
-    #popular-display {
-        width: 92%;
     }
 
     #activities-block {
@@ -623,40 +652,54 @@ footer section {
     }
 }
 
-/* Activities grid specific settings to prevent overflow for any ratio */
-@media (min-aspect-ratio: 7/5) and (max-aspect-ratio: 9/5) {
-    .activities-indv h2 {
-        font-size: 1.1em;
-    }
-
-    #activities-display {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "act-1 act-2 act-4""act-1 act-3 act-4""act-5 act-5 act-6";
+@media (max-width: 500px) {
+    .popular-indv img {
+        width: 100%;
     }
 }
 
-@media (min-aspect-ratio: 6/5) and (max-aspect-ratio: 7/5) {
-    .activities-indv h2 {
-        font-size: 1.1em;
-    }
-
-    #housing-block {
-        min-width: 100%;
-        margin: 0 15px;
-    }
-
-    #activities-display {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "act-1 act-2""act-1 act-3""act-4 act-5""act-4 act-6";
+@media (max-width: 415px) {
+    .pop-txt h2,
+    .pop-txt p {
+        margin: 0;
     }
 }
 
-@media (min-aspect-ratio: 6/5) and (max-aspect-ratio: 53/25) {
-    .activities-indv h2 {
-        font-size: 1em;
+
+/*ultra-narrow screen (smartwatch ?)*/
+@media (max-width: 320px) {
+    .roundblock {
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: inherit;
+    }
+    
+    #srch_web {
+        border-radius: 10px;
+        margin-left: 30px;
+    }
+}
+
+
+/* Research screen-width specific button*/
+#srch_web {
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 0;
+    display: inline-block;
+}
+
+#srch_mob {
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+    #srch_web {
+        display: none;
     }
 
-    #activities-display {
-        grid-gap: 10px;
+    #srch_mob {
+        display: inline-block;
     }
 }
