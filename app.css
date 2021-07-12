@@ -283,14 +283,14 @@ footer section {
     max-width: 60%;
 }
 
+#housing-block h1 {
+    padding-right: 30px;
+}
+
 #housing-display {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-#housing-display h1 {
-    padding-right: 30px;
 }
 
 #housing-more {
