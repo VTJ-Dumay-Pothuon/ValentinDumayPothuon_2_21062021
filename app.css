@@ -258,7 +258,7 @@ footer section {
 #housing-block {
     background-color: #F2F2F2;
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px 0;
 }
 
 #popular-block {
@@ -286,6 +286,11 @@ footer section {
 #housing-display {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+#housing-display h1 {
+    padding-right: 30px;
 }
 
 #housing-more {
@@ -347,7 +352,6 @@ footer section {
 
     #housing-block {
         max-width: 65%;
-        padding-right: 0;
     }
 }
 
