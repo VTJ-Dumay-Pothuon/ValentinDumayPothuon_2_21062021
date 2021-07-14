@@ -333,7 +333,7 @@ footer section {
 }
 
 #act-1 {
-    padding-left: 0;
+    margin-left: 0;
 }
 
 
@@ -391,7 +391,7 @@ footer section {
 }
 @media (max-width: 1220px) {
     .housing-indv {
-        margin: 5px;
+        margin: 8px;
     }
     
     .housing-indv img {
@@ -426,7 +426,7 @@ footer section {
     }
 
     #housing-block {
-        max-width: 42%;
+        max-width: 40%;
         padding-left: 10px;
     }
 
@@ -449,7 +449,7 @@ footer section {
     }
 }
 
-@media (min-width: 550px) and (max-width: 1000px) {
+@media (min-width: 550px) and (max-width: 1090px) {
     .activities-indv h2 {
         font-size: 1em;
     }
@@ -472,11 +472,15 @@ footer section {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "act-1 act-2""act-1 act-3""act-4 act-5""act-4 act-6";
     }
+
+    #act-4 {
+        margin-left: 0;
+    }
 }
 
 
 /* portrait tablet and vertical split screen */
-@media (max-width: 650px) {
+@media (max-width: 660px) {
     footer {
         display: block;
         padding-left: 20px;
@@ -575,7 +579,6 @@ footer section {
         width: 100%;
         margin: 10px 0;
         padding: 0;
-        font-size: 90%;
     }
 
     .housing-indv h2,
@@ -644,6 +647,12 @@ footer section {
         font-size: 1em;
     }
 
+    #housing-display,
+    #activities-display {
+        width: 80%;
+        margin: auto;
+    }
+
     #activities-block {
         padding: 0 20px;
     }
@@ -658,6 +667,11 @@ footer section {
     .popular-indv img {
         width: 100%;
     }
+    #housing-display,
+    #activities-display {
+        width: 90%;
+        margin: auto;
+    }
 }
 
 @media (max-width: 415px) {
@@ -665,8 +679,19 @@ footer section {
     .pop-txt p {
         margin: 0;
     }
+    #housing-display,
+    #activities-display {
+        width: 100%;
+        margin: auto;
+    }
 }
 
+@media (max-width: 340px) {
+    #logo,
+    #navsearch {
+        margin-left: 10px;
+    }
+}
 
 /*ultra-narrow screen (smartwatch ?)*/
 @media (max-width: 320px) {
@@ -675,10 +700,52 @@ footer section {
         width: 100%;
         background-color: inherit;
     }
+
+    .label {
+        font-size: .9em;
+    }
+
+    .activities-indv h2 {
+        font-size: 1.1em;
+        white-space: break-spaces;
+    }
     
+    #logo {
+        width: 50%;
+        margin-left: 15px;
+    }
+
+    #subscribe {
+        float: none;
+    }
+
+    #menu {
+        flex-wrap: wrap;
+    }
+
+    #navsearch {
+        margin-left: 0;
+    }
+
+    #navsearch h2 {
+        font-size: 1.2em;
+    }
+
+    #area {
+        width: 100%;
+    }
+
     #srch_web {
         border-radius: 10px;
-        margin-left: 30px;
+        margin-left: 10px;
+    }
+
+    #filters {
+        margin: 0;
+    }
+
+    #housing-block h1 {
+        margin: 0;
     }
 }
 
